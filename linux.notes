@@ -1,0 +1,464 @@
+Chapter 1 — Basic Linux Commands
+
+| #  | Command       | Use                | Example       |
+| -- | ------------- | ------------------ | ------------- |
+| 1  | `pwd`         | Current directory  | `pwd`         |
+| 2  | `ls`          | Files list         | `ls`          |
+| 3  | `ls -l`       | Detailed list      | `ls -l`       |
+| 4  | `ls -a`       | Hidden files       | `ls -a`       |
+| 5  | `ls -la`      | Detailed + hidden  | `ls -la`      |
+| 6  | `cd`          | Change directory   | `cd /etc`     |
+| 7  | `cd ..`       | Parent directory   | `cd ..`       |
+| 8  | `cd ~`        | Home directory     | `cd ~`        |
+| 9  | `cd -`        | Previous directory | `cd -`        |
+| 10 | `clear`       | Clear terminal     | `clear`       |
+| 11 | `history`     | Command history    | `history`     |
+| 12 | `whoami`      | Current user       | `whoami`      |
+| 13 | `hostname`    | Hostname           | `hostname`    |
+| 14 | `hostnamectl` | Manage hostname    | `hostnamectl` |
+| 15 | `date`        | Date/time          | `date`        |
+| 16 | `cal`         | Calendar           | `cal`         |
+| 17 | `uptime`      | System uptime      | `uptime`      |
+| 18 | `id`          | User/group IDs     | `id`          |
+| 19 | `who`         | Logged-in users    | `who`         |
+| 20 | `w`           | Users + activity   | `w`           |
+
+
+Chapter 2 — Files & Directories
+
+
+| #  | Command    | Use                    | Example                 |
+| -- | ---------- | ---------------------- | ----------------------- |
+| 21 | `mkdir`    | Create directory       | `mkdir project`         |
+| 22 | `mkdir -p` | Create nested dirs     | `mkdir -p a/b/c`        |
+| 23 | `rmdir`    | Remove empty directory | `rmdir test`            |
+| 24 | `touch`    | Create file            | `touch file.txt`        |
+| 25 | `cp`       | Copy file              | `cp a.txt b.txt`        |
+| 26 | `cp -r`    | Copy directory         | `cp -r app backup`      |
+| 27 | `mv`       | Move/rename            | `mv old new`            |
+| 28 | `rm`       | Delete file            | `rm file.txt`           |
+| 29 | `rm -r`    | Delete directory       | `rm -r test`            |
+| 30 | `rm -f`    | Force delete           | `rm -f file`            |
+| 31 | `rm -rf`   | Force recursive delete | `rm -rf test`           |
+| 32 | `install`  | Copy/install file      | `install app /usr/bin/` |
+| 33 | `ln`       | Create hard link       | `ln file link`          |
+| 34 | `ln -s`    | Create symbolic link   | `ln -s /var/log log`    |
+| 35 | `readlink` | Read symbolic link     | `readlink link`         |
+| 36 | `realpath` | Absolute path          | `realpath file`         |
+| 37 | `basename` | Get filename           | `basename /tmp/a.txt`   |
+| 38 | `dirname`  | Get directory          | `dirname /tmp/a.txt`    |
+| 39 | `tree`     | Directory tree         | `tree /etc`             |
+| 40 | `file`     | File type              | `file image.jpg`        |
+
+
+Chapter 3 — File Viewing
+
+
+| #  | Command   | Use                   | Example               |
+| -- | --------- | --------------------- | --------------------- |
+| 41 | `cat`     | Display file          | `cat file.txt`        |
+| 42 | `tac`     | Reverse display       | `tac file.txt`        |
+| 43 | `less`    | View large file       | `less log.txt`        |
+| 44 | `more`    | Page-by-page view     | `more log.txt`        |
+| 45 | `head`    | First lines           | `head file.txt`       |
+| 46 | `head -n` | Specific lines        | `head -n 20 file.txt` |
+| 47 | `tail`    | Last lines            | `tail file.txt`       |
+| 48 | `tail -n` | Last N lines          | `tail -n 20 log`      |
+| 49 | `tail -f` | Live log              | `tail -f app.log`     |
+| 50 | `nl`      | Number lines          | `nl file.txt`         |
+| 51 | `strings` | Extract readable text | `strings app`         |
+| 52 | `od`      | Octal/hex dump        | `od file`             |
+| 53 | `xxd`     | Hex dump              | `xxd file`            |
+| 54 | `hexdump` | Hex view              | `hexdump file`        |
+| 55 | `watch`   | Repeat command        | `watch df -h`         |
+
+
+
+Chapter 4 — Text Processing
+
+
+
+| #  | Command    | Use                     | Example                   |          |
+| -- | ---------- | ----------------------- | ------------------------- | -------- |
+| 56 | `grep`     | Search text             | `grep error log`          |          |
+| 57 | `grep -i`  | Case-insensitive search | `grep -i error log`       |          |
+| 58 | `grep -r`  | Recursive search        | `grep -r nginx /etc`      |          |
+| 59 | `grep -n`  | Show line number        | `grep -n error log`       |          |
+| 60 | `grep -v`  | Exclude match           | `grep -v error log`       |          |
+| 61 | `egrep`    | Extended grep           | `egrep 'a                 | b' file` |
+| 62 | `fgrep`    | Fixed string search     | `fgrep 'hello' file`      |          |
+| 63 | `sed`      | Stream editing          | `sed 's/old/new/' file`   |          |
+| 64 | `awk`      | Text processing         | `awk '{print $1}' file`   |          |
+| 65 | `cut`      | Extract fields          | `cut -d: -f1 /etc/passwd` |          |
+| 66 | `sort`     | Sort text               | `sort names.txt`          |          |
+| 67 | `uniq`     | Remove duplicates       | `uniq names.txt`          |          |
+| 68 | `wc`       | Count                   | `wc -l file`              |          |
+| 69 | `tr`       | Translate characters    | `tr a-z A-Z`              |          |
+| 70 | `join`     | Join files              | `join a.txt b.txt`        |          |
+| 71 | `paste`    | Merge columns           | `paste a b`               |          |
+| 72 | `comm`     | Compare sorted files    | `comm a b`                |          |
+| 73 | `diff`     | Compare files           | `diff a b`                |          |
+| 74 | `cmp`      | Binary comparison       | `cmp a b`                 |          |
+| 75 | `fmt`      | Format text             | `fmt file`                |          |
+| 76 | `fold`     | Wrap lines              | `fold -w 80 file`         |          |
+| 77 | `expand`   | Tabs → spaces           | `expand file`             |          |
+| 78 | `unexpand` | Spaces → tabs           | `unexpand file`           |          |
+| 79 | `column`   | Format columns          | `column -t file`          |          |
+| 80 | `printf`   | Formatted output        | `printf "%s\n" Hello`     |          |
+
+
+
+Chapter 5 — Search Commands
+
+
+| #  | Command        | Use                    | Example                   |
+| -- | -------------- | ---------------------- | ------------------------- |
+| 81 | `find`         | Find files             | `find / -name test.txt`   |
+| 82 | `find -type f` | Find files only        | `find /tmp -type f`       |
+| 83 | `find -type d` | Find directories       | `find /tmp -type d`       |
+| 84 | `find -size`   | Find by size           | `find / -size +100M`      |
+| 85 | `find -mtime`  | Find by modified time  | `find /tmp -mtime -1`     |
+| 86 | `find -user`   | Find by owner          | `find /home -user aditya` |
+| 87 | `locate`       | Fast search            | `locate nginx.conf`       |
+| 88 | `updatedb`     | Update locate database | `sudo updatedb`           |
+| 89 | `which`        | Command location       | `which bash`              |
+| 90 | `whereis`      | Locate binary/man      | `whereis nginx`           |
+| 91 | `type`         | Command type           | `type cd`                 |
+| 92 | `command -v`   | Locate command         | `command -v python`       |
+| 93 | `apropos`      | Search man pages       | `apropos network`         |
+| 94 | `whatis`       | Short command info     | `whatis ls`               |
+| 95 | `man`          | Manual                 | `man ls`                  |
+
+
+Chapter 6 — Users & Groups
+
+
+| #   | Command      | Use                    | Example                    |
+| --- | ------------ | ---------------------- | -------------------------- |
+| 96  | `useradd`    | Create user            | `useradd aditya`           |
+| 97  | `adduser`    | Add user               | `adduser aditya`           |
+| 98  | `passwd`     | Password               | `passwd aditya`            |
+| 99  | `usermod`    | Modify user            | `usermod -aG wheel aditya` |
+| 100 | `userdel`    | Delete user            | `userdel aditya`           |
+| 101 | `userdel -r` | Delete user + home     | `userdel -r aditya`        |
+| 102 | `groupadd`   | Create group           | `groupadd devops`          |
+| 103 | `groupdel`   | Delete group           | `groupdel devops`          |
+| 104 | `groupmod`   | Modify group           | `groupmod -n linux devops` |
+| 105 | `groups`     | User groups            | `groups aditya`            |
+| 106 | `gpasswd`    | Group administration   | `gpasswd -a aditya docker` |
+| 107 | `newgrp`     | Change active group    | `newgrp docker`            |
+| 108 | `su`         | Switch user            | `su - aditya`              |
+| 109 | `sudo`       | Run as privileged user | `sudo ls /root`            |
+| 110 | `visudo`     | Edit sudoers safely    | `visudo`                   |
+| 111 | `last`       | Login history          | `last`                     |
+| 112 | `lastlog`    | Last login             | `lastlog`                  |
+| 113 | `who`        | Logged users           | `who`                      |
+| 114 | `w`          | User activity          | `w`                        |
+| 115 | `finger`     | User information       | `finger aditya`            |
+
+
+Chapter 7 — Permissions & Security
+
+
+| #   | Command    | Use                   | Example                        |
+| --- | ---------- | --------------------- | ------------------------------ |
+| 116 | `chmod`    | Change permission     | `chmod 755 script.sh`          |
+| 117 | `chmod +x` | Add execute           | `chmod +x script.sh`           |
+| 118 | `chmod -R` | Recursive permissions | `chmod -R 755 app`             |
+| 119 | `chown`    | Change owner          | `chown aditya file`            |
+| 120 | `chown -R` | Recursive owner       | `chown -R aditya app`          |
+| 121 | `chgrp`    | Change group          | `chgrp devops file`            |
+| 122 | `umask`    | Default permissions   | `umask 022`                    |
+| 123 | `getfacl`  | View ACL              | `getfacl file`                 |
+| 124 | `setfacl`  | Set ACL               | `setfacl -m u:aditya:rwx file` |
+| 125 | `lsattr`   | File attributes       | `lsattr file`                  |
+| 126 | `chattr`   | Change attributes     | `chattr +i file`               |
+| 127 | `getcap`   | File capabilities     | `getcap /usr/bin/ping`         |
+| 128 | `setcap`   | Set capabilities      | `setcap cap_net_raw+ep file`   |
+| 129 | `sudo`     | Privileged execution  | `sudo systemctl status sshd`   |
+| 130 | `visudo`   | Configure sudo        | `visudo`                       |
+
+
+
+Chapter 8 — Process Management
+
+| #   | Command   | Use                    | Example              |
+| --- | --------- | ---------------------- | -------------------- |
+| 131 | `ps`      | Processes              | `ps aux`             |
+| 132 | `ps -ef`  | Full process list      | `ps -ef`             |
+| 133 | `top`     | Process monitor        | `top`                |
+| 134 | `htop`    | Interactive monitor    | `htop`               |
+| 135 | `pgrep`   | Find process ID        | `pgrep nginx`        |
+| 136 | `pkill`   | Kill by name           | `pkill nginx`        |
+| 137 | `kill`    | Kill PID               | `kill 1234`          |
+| 138 | `kill -9` | Force kill             | `kill -9 1234`       |
+| 139 | `killall` | Kill process name      | `killall nginx`      |
+| 140 | `jobs`    | Shell jobs             | `jobs`               |
+| 141 | `bg`      | Background job         | `bg %1`              |
+| 142 | `fg`      | Foreground job         | `fg %1`              |
+| 143 | `nohup`   | Run after logout       | `nohup ./app.sh &`   |
+| 144 | `nice`    | Start with priority    | `nice -n 10 command` |
+| 145 | `renice`  | Change priority        | `renice 10 -p 1234`  |
+| 146 | `pstree`  | Process tree           | `pstree`             |
+| 147 | `time`    | Measure execution time | `time ls`            |
+| 148 | `pidof`   | Find PID               | `pidof nginx`        |
+| 149 | `strace`  | Trace system calls     | `strace ls`          |
+| 150 | `lsof`    | Open files/processes   | `lsof -i :8080`      |
+
+
+Chapter 9 — System Information
+
+
+
+| #   | Command               | Use                  | Example               |       |
+| --- | --------------------- | -------------------- | --------------------- | ----- |
+| 151 | `uname`               | Kernel information   | `uname -a`            |       |
+| 152 | `hostnamectl`         | System/hostname info | `hostnamectl`         |       |
+| 153 | `cat /etc/os-release` | OS version           | `cat /etc/os-release` |       |
+| 154 | `lscpu`               | CPU info             | `lscpu`               |       |
+| 155 | `lsmem`               | Memory info          | `lsmem`               |       |
+| 156 | `free`                | RAM usage            | `free -h`             |       |
+| 157 | `vmstat`              | System statistics    | `vmstat`              |       |
+| 158 | `iostat`              | CPU/I/O stats        | `iostat`              |       |
+| 159 | `sar`                 | System activity      | `sar`                 |       |
+| 160 | `dmesg`               | Kernel messages      | `dmesg                | tail` |
+| 161 | `lsusb`               | USB devices          | `lsusb`               |       |
+| 162 | `lspci`               | PCI devices          | `lspci`               |       |
+| 163 | `dmidecode`           | Hardware info        | `sudo dmidecode`      |       |
+| 164 | `uptime`              | Load/uptime          | `uptime`              |       |
+| 165 | `sysctl`              | Kernel parameters    | `sysctl -a`           |       |
+
+
+
+Chapter 10 — Disk & Storage
+
+
+
+| #   | Command    | Use                  | Example                |
+| --- | ---------- | -------------------- | ---------------------- |
+| 166 | `df`       | Disk usage           | `df -h`                |
+| 167 | `du`       | Directory usage      | `du -sh /var`          |
+| 168 | `lsblk`    | Block devices        | `lsblk`                |
+| 169 | `blkid`    | UUID/type            | `blkid`                |
+| 170 | `fdisk`    | Partition management | `fdisk -l`             |
+| 171 | `parted`   | Partition tool       | `parted -l`            |
+| 172 | `mount`    | Mount filesystem     | `mount /dev/sdb1 /mnt` |
+| 173 | `umount`   | Unmount              | `umount /mnt`          |
+| 174 | `findmnt`  | Mounted filesystems  | `findmnt`              |
+| 175 | `swapon`   | Enable swap          | `swapon -a`            |
+| 176 | `swapoff`  | Disable swap         | `swapoff -a`           |
+| 177 | `mkswap`   | Create swap          | `mkswap /dev/sdb2`     |
+| 178 | `mkfs`     | Create filesystem    | `mkfs.ext4 /dev/sdb1`  |
+| 179 | `fsck`     | Check filesystem     | `fsck /dev/sdb1`       |
+| 180 | `xfs_info` | XFS information      | `xfs_info /dev/sdb1`   |
+
+
+
+Chapter 11 — Networking
+
+
+| #   | Command       | Use                   | Example                            |
+| --- | ------------- | --------------------- | ---------------------------------- |
+| 181 | `ip`          | Network configuration | `ip addr`                          |
+| 182 | `ip addr`     | Show IP               | `ip addr show`                     |
+| 183 | `ip link`     | Interfaces            | `ip link`                          |
+| 184 | `ip route`    | Routing               | `ip route`                         |
+| 185 | `ip neigh`    | ARP/neighbors         | `ip neigh`                         |
+| 186 | `ping`        | Connectivity          | `ping 8.8.8.8`                     |
+| 187 | `ss`          | Network sockets       | `ss -tulpn`                        |
+| 188 | `netstat`     | Network statistics    | `netstat -tulpn`                   |
+| 189 | `curl`        | HTTP requests         | `curl localhost`                   |
+| 190 | `wget`        | Download              | `wget URL`                         |
+| 191 | `hostname`    | Hostname              | `hostname`                         |
+| 192 | `hostnamectl` | Configure hostname    | `hostnamectl set-hostname server1` |
+| 193 | `nmcli`       | NetworkManager CLI    | `nmcli device status`              |
+| 194 | `nmtui`       | Network UI            | `nmtui`                            |
+| 195 | `ethtool`     | NIC information       | `ethtool eth0`                     |
+| 196 | `arp`         | ARP table             | `arp -a`                           |
+| 197 | `route`       | Routing table         | `route -n`                         |
+| 198 | `traceroute`  | Trace route           | `traceroute google.com`            |
+| 199 | `tracepath`   | Trace path            | `tracepath google.com`             |
+| 200 | `mtr`         | Network diagnostic    | `mtr google.com`                   |
+
+
+Chapter 12 — DNS Commands
+
+
+| #   | Command        | Use                | Example                       |
+| --- | -------------- | ------------------ | ----------------------------- |
+| 201 | `dig`          | DNS query          | `dig google.com`              |
+| 202 | `nslookup`     | DNS lookup         | `nslookup google.com`         |
+| 203 | `host`         | DNS lookup         | `host google.com`             |
+| 204 | `resolvectl`   | DNS resolver       | `resolvectl status`           |
+| 205 | `getent hosts` | Host lookup        | `getent hosts google.com`     |
+| 206 | `hostname -f`  | FQDN               | `hostname -f`                 |
+| 207 | `curl -I`      | HTTP headers       | `curl -I https://google.com`  |
+| 208 | `curl -v`      | Verbose connection | `curl -v https://example.com` |
+| 209 | `nc`           | Network connection | `nc -vz host 80`              |
+| 210 | `telnet`       | Test port          | `telnet host 80`              |
+
+
+Chapter 13 — SSH
+
+
+| #   | Command       | Use               | Example                     |
+| --- | ------------- | ----------------- | --------------------------- |
+| 211 | `ssh`         | Remote login      | `ssh user@192.168.1.10`     |
+| 212 | `ssh -p`      | Custom SSH port   | `ssh -p 2222 user@host`     |
+| 213 | `ssh-keygen`  | Generate key      | `ssh-keygen -t ed25519`     |
+| 214 | `ssh-copy-id` | Copy public key   | `ssh-copy-id user@host`     |
+| 215 | `ssh-add`     | Add key to agent  | `ssh-add ~/.ssh/id_ed25519` |
+| 216 | `ssh-agent`   | SSH agent         | `ssh-agent`                 |
+| 217 | `scp`         | Secure copy       | `scp file user@host:/tmp/`  |
+| 218 | `sftp`        | Secure FTP        | `sftp user@host`            |
+| 219 | `ssh-keyscan` | Get host key      | `ssh-keyscan host`          |
+| 220 | `sshd`        | SSH server daemon | `systemctl status sshd`     |
+
+
+Chapter 14 — Package Management: RHEL/CentOS
+
+
+| #   | Command              | Use                | Example                 |
+| --- | -------------------- | ------------------ | ----------------------- |
+| 221 | `dnf`                | Package manager    | `dnf install git`       |
+| 222 | `dnf install`        | Install            | `dnf install nginx`     |
+| 223 | `dnf remove`         | Remove             | `dnf remove nginx`      |
+| 224 | `dnf update`         | Update packages    | `dnf update`            |
+| 225 | `dnf search`         | Search package     | `dnf search nginx`      |
+| 226 | `dnf info`           | Package info       | `dnf info nginx`        |
+| 227 | `dnf list installed` | Installed packages | `dnf list installed`    |
+| 228 | `dnf clean all`      | Clear cache        | `dnf clean all`         |
+| 229 | `rpm`                | RPM management     | `rpm -qa`               |
+| 230 | `rpm -qa`            | List RPMs          | `rpm -qa`               |
+| 231 | `rpm -qi`            | Package info       | `rpm -qi nginx`         |
+| 232 | `rpm -ql`            | Package files      | `rpm -ql nginx`         |
+| 233 | `rpm -qf`            | Find package owner | `rpm -qf /usr/bin/bash` |
+| 234 | `rpm -ivh`           | Install RPM        | `rpm -ivh package.rpm`  |
+| 235 | `rpm -e`             | Remove RPM         | `rpm -e package`        |
+
+
+Chapter 15 — Ubuntu/Debian Packages
+
+
+| #   | Command          | Use                    | Example             |
+| --- | ---------------- | ---------------------- | ------------------- |
+| 236 | `apt`            | Package manager        | `apt update`        |
+| 237 | `apt update`     | Update repositories    | `apt update`        |
+| 238 | `apt upgrade`    | Upgrade packages       | `apt upgrade`       |
+| 239 | `apt install`    | Install                | `apt install nginx` |
+| 240 | `apt remove`     | Remove                 | `apt remove nginx`  |
+| 241 | `apt search`     | Search                 | `apt search nginx`  |
+| 242 | `apt show`       | Package info           | `apt show nginx`    |
+| 243 | `apt autoremove` | Remove unused packages | `apt autoremove`    |
+| 244 | `dpkg -l`        | List packages          | `dpkg -l`           |
+| 245 | `dpkg -i`        | Install `.deb`         | `dpkg -i app.deb`   |
+
+
+Chapter 16 — Services & Systemd
+
+
+| #   | Command                     | Use               | Example                      |
+| --- | --------------------------- | ----------------- | ---------------------------- |
+| 246 | `systemctl status`          | Service status    | `systemctl status nginx`     |
+| 247 | `systemctl start`           | Start service     | `systemctl start nginx`      |
+| 248 | `systemctl stop`            | Stop service      | `systemctl stop nginx`       |
+| 249 | `systemctl restart`         | Restart           | `systemctl restart nginx`    |
+| 250 | `systemctl reload`          | Reload config     | `systemctl reload nginx`     |
+| 251 | `systemctl enable`          | Start at boot     | `systemctl enable nginx`     |
+| 252 | `systemctl disable`         | Disable boot      | `systemctl disable nginx`    |
+| 253 | `systemctl is-active`       | Check active      | `systemctl is-active nginx`  |
+| 254 | `systemctl is-enabled`      | Check enabled     | `systemctl is-enabled nginx` |
+| 255 | `systemctl list-units`      | List units        | `systemctl list-units`       |
+| 256 | `systemctl list-unit-files` | Unit files        | `systemctl list-unit-files`  |
+| 257 | `systemctl daemon-reload`   | Reload unit files | `systemctl daemon-reload`    |
+| 258 | `systemctl mask`            | Block service     | `systemctl mask nginx`       |
+| 259 | `systemctl unmask`          | Unblock service   | `systemctl unmask nginx`     |
+| 260 | `systemctl get-default`     | Default target    | `systemctl get-default`      |
+
+
+Chapter 17 — Logs & Troubleshooting
+
+
+| #   | Command             | Use               | Example                     |
+| --- | ------------------- | ----------------- | --------------------------- |
+| 261 | `journalctl`        | System logs       | `journalctl`                |
+| 262 | `journalctl -f`     | Live logs         | `journalctl -f`             |
+| 263 | `journalctl -u`     | Service logs      | `journalctl -u nginx`       |
+| 264 | `journalctl -b`     | Current boot logs | `journalctl -b`             |
+| 265 | `journalctl -p err` | Error logs        | `journalctl -p err`         |
+| 266 | `dmesg`             | Kernel logs       | `dmesg`                     |
+| 267 | `tail -f`           | Live log          | `tail -f /var/log/messages` |
+| 268 | `grep`              | Search logs       | `grep ERROR app.log`        |
+| 269 | `logger`            | Write system log  | `logger "Test message"`     |
+| 270 | `last`              | Login history     | `last`                      |
+
+
+Chapter 18 — Firewall & SELinux
+
+
+| #   | Command                       | Use                     | Example                                       |
+| --- | ----------------------------- | ----------------------- | --------------------------------------------- |
+| 271 | `firewall-cmd --state`        | Firewall status         | `firewall-cmd --state`                        |
+| 272 | `firewall-cmd --list-all`     | Rules                   | `firewall-cmd --list-all`                     |
+| 273 | `firewall-cmd --get-services` | Available services      | `firewall-cmd --get-services`                 |
+| 274 | `firewall-cmd --add-service`  | Allow service           | `firewall-cmd --add-service=http`             |
+| 275 | `firewall-cmd --add-port`     | Allow port              | `firewall-cmd --add-port=8080/tcp`            |
+| 276 | `firewall-cmd --remove-port`  | Remove port             | `firewall-cmd --remove-port=8080/tcp`         |
+| 277 | `firewall-cmd --reload`       | Reload rules            | `firewall-cmd --reload`                       |
+| 278 | `firewall-cmd --permanent`    | Persistent rule         | `firewall-cmd --permanent --add-service=http` |
+| 279 | `getenforce`                  | SELinux mode            | `getenforce`                                  |
+| 280 | `sestatus`                    | SELinux status          | `sestatus`                                    |
+| 281 | `setenforce`                  | Change temporary mode   | `setenforce 0`                                |
+| 282 | `semanage`                    | Manage SELinux policy   | `semanage port -l`                            |
+| 283 | `restorecon`                  | Restore SELinux context | `restorecon -Rv /var/www`                     |
+| 284 | `chcon`                       | Change SELinux context  | `chcon -t httpd_sys_content_t file`           |
+| 285 | `ausearch`                    | Search audit logs       | `ausearch -m AVC`                             |
+
+
+Chapter 19 — Archive & Compression
+
+
+| #   | Command   | Use               | Example                     |
+| --- | --------- | ----------------- | --------------------------- |
+| 286 | `tar`     | Archive           | `tar -cf backup.tar app/`   |
+| 287 | `tar -x`  | Extract           | `tar -xf backup.tar`        |
+| 288 | `tar -c`  | Create archive    | `tar -cf app.tar app/`      |
+| 289 | `tar -z`  | gzip compression  | `tar -czf app.tar.gz app/`  |
+| 290 | `tar -j`  | bzip2 compression | `tar -cjf app.tar.bz2 app/` |
+| 291 | `tar -J`  | xz compression    | `tar -cJf app.tar.xz app/`  |
+| 292 | `gzip`    | Compress          | `gzip file`                 |
+| 293 | `gunzip`  | Decompress        | `gunzip file.gz`            |
+| 294 | `bzip2`   | Compress          | `bzip2 file`                |
+| 295 | `bunzip2` | Decompress        | `bunzip2 file.bz2`          |
+| 296 | `xz`      | Compress          | `xz file`                   |
+| 297 | `unxz`    | Decompress        | `unxz file.xz`              |
+| 298 | `zip`     | ZIP archive       | `zip -r app.zip app/`       |
+| 299 | `unzip`   | Extract ZIP       | `unzip app.zip`             |
+| 300 | `zcat`    | View gzipped file | `zcat log.gz`               |
+
+
+Chapter 20 — Bash & Shell
+
+| #   | Command    | Use                     | Example             |
+| --- | ---------- | ----------------------- | ------------------- |
+| 301 | `bash`     | Start Bash              | `bash`              |
+| 302 | `sh`       | Start shell             | `sh`                |
+| 303 | `echo`     | Print output            | `echo Hello`        |
+| 304 | `printf`   | Formatted output        | `printf "%s" Hello` |
+| 305 | `read`     | Read input              | `read name`         |
+| 306 | `export`   | Set variable            | `export APP=prod`   |
+| 307 | `env`      | Environment variables   | `env`               |
+| 308 | `printenv` | Print environment       | `printenv PATH`     |
+| 309 | `set`      | Shell variables/options | `set`               |
+| 310 | `unset`    | Remove variable         | `unset APP`         |
+| 311 | `alias`    | Create shortcut         | `alias ll='ls -la'` |
+| 312 | `unalias`  | Remove alias            | `unalias ll`        |
+| 313 | `source`   | Execute shell file      | `source ~/.bashrc`  |
+| 314 | `exit`     | Exit shell              | `exit`              |
+| 315 | `readlink` | Resolve links           | `readlink -f file`  |
+| 316 | `expr`     | Basic expressions       | `expr 10 + 5`       |
+| 317 | `let`      | Arithmetic              | `let x=10+5`        |
+| 318 | `test`     | Test condition          | `test -f file`      |
+| 319 | `true`     | Return success          | `true`              |
+| 320 | `false`    | Return failure          | `false`             |
+
