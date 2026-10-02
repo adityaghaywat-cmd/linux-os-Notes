@@ -462,3 +462,276 @@ Chapter 20 — Bash & Shell
 | 319 | `true`     | Return success          | `true`              |
 | 320 | `false`    | Return failure          | `false`             |
 
+
+Chapter 21 — Cron & Task Scheduling
+
+
+| #   | Command      | Use                   | Example                 |
+| --- | ------------ | --------------------- | ----------------------- |
+| 321 | `crontab -e` | Edit cron             | `crontab -e`            |
+| 322 | `crontab -l` | List cron             | `crontab -l`            |
+| 323 | `crontab -r` | Remove cron           | `crontab -r`            |
+| 324 | `at`         | One-time task         | `at 10:00`              |
+| 325 | `atq`        | List at jobs          | `atq`                   |
+| 326 | `atrm`       | Remove at job         | `atrm 1`                |
+| 327 | `batch`      | Run when load permits | `batch`                 |
+| 328 | `systemctl`  | Manage timers         | `systemctl list-timers` |
+| 329 | `sleep`      | Delay execution       | `sleep 10`              |
+| 330 | `watch`      | Repeat command        | `watch date`            |
+
+
+Chapter 22 — Environment & Shell Variables
+
+
+| #   | Command       | Use             | Example                      |
+| --- | ------------- | --------------- | ---------------------------- |
+| 331 | `echo $PATH`  | Show PATH       | `echo $PATH`                 |
+| 332 | `echo $HOME`  | Home directory  | `echo $HOME`                 |
+| 333 | `echo $USER`  | Current user    | `echo $USER`                 |
+| 334 | `echo $SHELL` | Current shell   | `echo $SHELL`                |
+| 335 | `echo $PWD`   | Current path    | `echo $PWD`                  |
+| 336 | `env`         | Environment     | `env`                        |
+| 337 | `printenv`    | Print variable  | `printenv HOME`              |
+| 338 | `export`      | Export variable | `export JAVA_HOME=/opt/java` |
+| 339 | `unset`       | Remove variable | `unset JAVA_HOME`            |
+| 340 | `source`      | Reload config   | `source ~/.bashrc`           |
+
+
+Chapter 23 — Apache Web Server
+
+| #   | Command                   | Use                | Example                   |
+| --- | ------------------------- | ------------------ | ------------------------- |
+| 341 | `httpd`                   | Apache server      | `httpd -v`                |
+| 342 | `apachectl`               | Apache control     | `apachectl -t`            |
+| 343 | `systemctl start httpd`   | Start Apache       | `systemctl start httpd`   |
+| 344 | `systemctl stop httpd`    | Stop Apache        | `systemctl stop httpd`    |
+| 345 | `systemctl restart httpd` | Restart Apache     | `systemctl restart httpd` |
+| 346 | `systemctl status httpd`  | Apache status      | `systemctl status httpd`  |
+| 347 | `httpd -t`                | Test config        | `httpd -t`                |
+| 348 | `apachectl -S`            | Show virtual hosts | `apachectl -S`            |
+| 349 | `curl localhost`          | Test website       | `curl localhost`          |
+| 350 | `ss -lntp`                | Check web port     | `ss -lntp`                |
+
+
+Chapter 24 — Nginx
+
+
+| #   | Command                   | Use              | Example                   |
+| --- | ------------------------- | ---------------- | ------------------------- |
+| 351 | `nginx -v`                | Nginx version    | `nginx -v`                |
+| 352 | `nginx -t`                | Test config      | `nginx -t`                |
+| 353 | `nginx -T`                | Show full config | `nginx -T`                |
+| 354 | `systemctl start nginx`   | Start            | `systemctl start nginx`   |
+| 355 | `systemctl stop nginx`    | Stop             | `systemctl stop nginx`    |
+| 356 | `systemctl restart nginx` | Restart          | `systemctl restart nginx` |
+| 357 | `systemctl reload nginx`  | Reload           | `systemctl reload nginx`  |
+| 358 | `systemctl status nginx`  | Status           | `systemctl status nginx`  |
+| 359 | `curl localhost`          | Test site        | `curl localhost`          |
+| 360 | `ss -lntp`                | Check port       | `ss -lntp`                |
+
+
+Chapter 25 — Git
+
+| #   | Command        | Use                      | Example                                  |
+| --- | -------------- | ------------------------ | ---------------------------------------- |
+| 361 | `git init`     | Create repository        | `git init`                               |
+| 362 | `git clone`    | Clone repository         | `git clone URL`                          |
+| 363 | `git status`   | Repository status        | `git status`                             |
+| 364 | `git add`      | Stage files              | `git add .`                              |
+| 365 | `git commit`   | Commit changes           | `git commit -m "update"`                 |
+| 366 | `git push`     | Upload changes           | `git push origin main`                   |
+| 367 | `git pull`     | Download + merge         | `git pull`                               |
+| 368 | `git fetch`    | Download refs            | `git fetch`                              |
+| 369 | `git branch`   | List/create branches     | `git branch`                             |
+| 370 | `git switch`   | Switch branch            | `git switch main`                        |
+| 371 | `git checkout` | Switch/restore           | `git checkout main`                      |
+| 372 | `git merge`    | Merge branch             | `git merge dev`                          |
+| 373 | `git log`      | Commit history           | `git log --oneline`                      |
+| 374 | `git diff`     | Show differences         | `git diff`                               |
+| 375 | `git remote`   | Remote repository        | `git remote -v`                          |
+| 376 | `git tag`      | Create/list tags         | `git tag v1.0`                           |
+| 377 | `git stash`    | Temporarily save changes | `git stash`                              |
+| 378 | `git reset`    | Reset changes            | `git reset --hard`                       |
+| 379 | `git revert`   | Revert commit            | `git revert HEAD`                        |
+| 380 | `git config`   | Configure Git            | `git config --global user.name "Aditya"` |
+
+
+Chapter 26 — Docker
+
+
+| #   | Command          | Use                      | Example                         |
+| --- | ---------------- | ------------------------ | ------------------------------- |
+| 381 | `docker version` | Docker version           | `docker version`                |
+| 382 | `docker info`    | Docker information       | `docker info`                   |
+| 383 | `docker ps`      | Running containers       | `docker ps`                     |
+| 384 | `docker ps -a`   | All containers           | `docker ps -a`                  |
+| 385 | `docker images`  | Images                   | `docker images`                 |
+| 386 | `docker pull`    | Download image           | `docker pull nginx`             |
+| 387 | `docker run`     | Create/run container     | `docker run -d nginx`           |
+| 388 | `docker start`   | Start container          | `docker start app`              |
+| 389 | `docker stop`    | Stop container           | `docker stop app`               |
+| 390 | `docker restart` | Restart                  | `docker restart app`            |
+| 391 | `docker rm`      | Remove container         | `docker rm app`                 |
+| 392 | `docker rmi`     | Remove image             | `docker rmi nginx`              |
+| 393 | `docker exec`    | Execute inside container | `docker exec -it app bash`      |
+| 394 | `docker logs`    | Container logs           | `docker logs app`               |
+| 395 | `docker inspect` | Container details        | `docker inspect app`            |
+| 396 | `docker build`   | Build image              | `docker build -t app:v1 .`      |
+| 397 | `docker tag`     | Tag image                | `docker tag app:v1 repo/app:v1` |
+| 398 | `docker push`    | Push image               | `docker push repo/app:v1`       |
+| 399 | `docker network` | Manage networks          | `docker network ls`             |
+| 400 | `docker volume`  | Manage volumes           | `docker volume ls`              |
+
+
+Chapter 27 — Maven & Java
+
+
+| #   | Command               | Use              | Example               |
+| --- | --------------------- | ---------------- | --------------------- |
+| 401 | `java -version`       | Java version     | `java -version`       |
+| 402 | `javac -version`      | Compiler version | `javac -version`      |
+| 403 | `javac`               | Compile Java     | `javac App.java`      |
+| 404 | `java`                | Run Java         | `java App`            |
+| 405 | `mvn -version`        | Maven version    | `mvn -version`        |
+| 406 | `mvn clean`           | Clean build      | `mvn clean`           |
+| 407 | `mvn compile`         | Compile          | `mvn compile`         |
+| 408 | `mvn test`            | Run tests        | `mvn test`            |
+| 409 | `mvn package`         | Create package   | `mvn package`         |
+| 410 | `mvn clean package`   | Clean + package  | `mvn clean package`   |
+| 411 | `mvn install`         | Install artifact | `mvn install`         |
+| 412 | `mvn deploy`          | Deploy artifact  | `mvn deploy`          |
+| 413 | `mvn dependency:tree` | Dependencies     | `mvn dependency:tree` |
+| 414 | `jar`                 | Manage JAR       | `jar tf app.jar`      |
+| 415 | `jps`                 | Java processes   | `jps -l`              |
+
+
+Chapter 28 — Node.js / npm / PM2
+
+
+| #   | Command               | Use                  | Example                     |
+| --- | --------------------- | -------------------- | --------------------------- |
+| 416 | `node -v`             | Node version         | `node -v`                   |
+| 417 | `npm -v`              | npm version          | `npm -v`                    |
+| 418 | `npm init`            | Create package       | `npm init`                  |
+| 419 | `npm install`         | Install dependencies | `npm install`               |
+| 420 | `npm install express` | Install package      | `npm install express`       |
+| 421 | `npm uninstall`       | Remove package       | `npm uninstall express`     |
+| 422 | `npm list`            | List packages        | `npm list`                  |
+| 423 | `npm run`             | Run scripts          | `npm run start`             |
+| 424 | `npm start`           | Start app            | `npm start`                 |
+| 425 | `npm test`            | Run tests            | `npm test`                  |
+| 426 | `npx`                 | Execute package      | `npx vite`                  |
+| 427 | `pm2 start`           | Start Node app       | `pm2 start app.js`          |
+| 428 | `pm2 stop`            | Stop app             | `pm2 stop app`              |
+| 429 | `pm2 restart`         | Restart app          | `pm2 restart app`           |
+| 430 | `pm2 status`          | Process status       | `pm2 status`                |
+| 431 | `pm2 logs`            | View logs            | `pm2 logs`                  |
+| 432 | `pm2 save`            | Save process list    | `pm2 save`                  |
+| 433 | `pm2 startup`         | Startup service      | `pm2 startup`               |
+| 434 | `pm2 delete`          | Delete process       | `pm2 delete app`            |
+| 435 | `pm2 serve`           | Serve static files   | `pm2 serve dist 3000 --spa` |
+
+
+Chapter 29 — Jenkins / CI-CD Related Linux Commands
+
+
+| #   | Command                     | Use                 | Example                               |                          |
+| --- | --------------------------- | ------------------- | ------------------------------------- | ------------------------ |
+| 436 | `java -version`             | Check Java          | `java -version`                       |                          |
+| 437 | `systemctl status jenkins`  | Jenkins status      | `systemctl status jenkins`            |                          |
+| 438 | `systemctl restart jenkins` | Restart Jenkins     | `systemctl restart jenkins`           |                          |
+| 439 | `journalctl -u jenkins`     | Jenkins logs        | `journalctl -u jenkins`               |                          |
+| 440 | `curl localhost:8080`       | Test Jenkins        | `curl localhost:8080`                 |                          |
+| 441 | `ss -lntp`                  | Check Jenkins port  | `ss -lntp`                            |                          |
+| 442 | `ps aux                     | grep jenkins`       | Find Jenkins process                  | `ps aux \| grep jenkins` |
+| 443 | `id jenkins`                | Jenkins user info   | `id jenkins`                          |                          |
+| 444 | `sudo -u jenkins`           | Run as Jenkins      | `sudo -u jenkins whoami`              |                          |
+| 445 | `chown`                     | Workspace ownership | `chown -R jenkins:jenkins workspace/` |                          |
+
+
+Chapter 30 — Nexus / Tomcat / Deployment
+
+
+| #   | Command     | Use                | Example                           |
+| --- | ----------- | ------------------ | --------------------------------- |
+| 446 | `curl`      | Test Nexus/Tomcat  | `curl localhost:8081`             |
+| 447 | `ss`        | Check ports        | `ss -lntp`                        |
+| 448 | `systemctl` | Manage services    | `systemctl status nexus`          |
+| 449 | `ps`        | Find Java process  | `ps -ef \| grep java`             |
+| 450 | `tar`       | Extract Tomcat     | `tar -xf tomcat.tar.gz`           |
+| 451 | `cp`        | Deploy WAR         | `cp app.war /opt/tomcat/webapps/` |
+| 452 | `rm`        | Remove deployment  | `rm app.war`                      |
+| 453 | `tail`      | Tomcat logs        | `tail -f catalina.out`            |
+| 454 | `curl -I`   | HTTP status        | `curl -I localhost:8080`          |
+| 455 | `chmod`     | Script permissions | `chmod +x startup.sh`             |
+
+
+Chapter 31 — Advanced Linux Commands
+
+| #   | Command   | Use                       | Example                         |
+| --- | --------- | ------------------------- | ------------------------------- |
+| 456 | `xargs`   | Build commands from input | `cat files \| xargs rm`         |
+| 457 | `tee`     | Output + file             | `echo hello \| tee file`        |
+| 458 | `yes`     | Repeat output             | `yes test`                      |
+| 459 | `seq`     | Generate numbers          | `seq 1 10`                      |
+| 460 | `shuf`    | Randomize lines           | `shuf file`                     |
+| 461 | `split`   | Split files               | `split -l 100 file`             |
+| 462 | `csplit`  | Split by pattern          | `csplit file /pattern/`         |
+| 463 | `timeout` | Limit execution time      | `timeout 10 command`            |
+| 464 | `nohup`   | Persistent process        | `nohup ./app &`                 |
+| 465 | `disown`  | Detach job                | `disown %1`                     |
+| 466 | `screen`  | Persistent terminal       | `screen`                        |
+| 467 | `tmux`    | Terminal multiplexer      | `tmux`                          |
+| 468 | `flock`   | File locking              | `flock /tmp/app.lock command`   |
+| 469 | `chroot`  | Change root directory     | `chroot /mnt/root`              |
+| 470 | `nsenter` | Enter namespaces          | `nsenter -t PID -m -u -i -n -p` |
+
+
+
+Chapter 32 — More Networking / Diagnostics
+
+| #   | Command            | Use                     | Example                                     |
+| --- | ------------------ | ----------------------- | ------------------------------------------- |
+| 471 | `nc`               | Network testing         | `nc -vz localhost 8080`                     |
+| 472 | `socat`            | Network relay           | `socat TCP-LISTEN:8080,fork TCP:host:80`    |
+| 473 | `tcpdump`          | Capture packets         | `tcpdump -i eth0`                           |
+| 474 | `tshark`           | CLI packet analysis     | `tshark -i eth0`                            |
+| 475 | `nmap`             | Port scanning           | `nmap localhost`                            |
+| 476 | `openssl`          | SSL/TLS tools           | `openssl version`                           |
+| 477 | `openssl s_client` | Test TLS                | `openssl s_client -connect example.com:443` |
+| 478 | `curl -k`          | Ignore TLS verification | `curl -k https://host`                      |
+| 479 | `curl -X`          | HTTP method             | `curl -X POST URL`                          |
+| 480 | `curl -d`          | Send POST data          | `curl -d 'name=Aditya' URL`                 |
+
+
+Chapter 33 — More File/System Commands
+
+
+| #   | Command      | Use                      | Example                      |
+| --- | ------------ | ------------------------ | ---------------------------- |
+| 481 | `stat`       | File metadata            | `stat file.txt`              |
+| 482 | `touch -d`   | Change timestamp         | `touch -d '2026-01-01' file` |
+| 483 | `truncate`   | Change file size         | `truncate -s 0 log.txt`      |
+| 484 | `shred`      | Overwrite file           | `shred file.txt`             |
+| 485 | `sync`       | Flush filesystem buffers | `sync`                       |
+| 486 | `mountpoint` | Check mount              | `mountpoint /mnt`            |
+| 487 | `blkdiscard` | Discard blocks           | `blkdiscard /dev/sdb`        |
+| 488 | `losetup`    | Manage loop devices      | `losetup -a`                 |
+| 489 | `dd`         | Copy/convert data        | `dd if=input of=output`      |
+| 490 | `mktemp`     | Temporary file           | `mktemp`                     |
+
+Chapter 34 — Final 10 Important Commands
+
+
+| #   | Command   | Use                      | Example                            |
+| --- | --------- | ------------------------ | ---------------------------------- |
+| 491 | `sudo`    | Administrative execution | `sudo command`                     |
+| 492 | `man`     | Documentation            | `man systemctl`                    |
+| 493 | `help`    | Bash built-in help       | `help cd`                          |
+| 494 | `apropos` | Search commands          | `apropos disk`                     |
+| 495 | `history` | Previous commands        | `history`                          |
+| 496 | `alias`   | Shortcut                 | `alias ll='ls -la'`                |
+| 497 | `watch`   | Repeated monitoring      | `watch df -h`                      |
+| 498 | `time`    | Execution timing         | `time ./script.sh`                 |
+| 499 | `env`     | Environment variables    | `env`                              |
+| 500 | `xargs`   | Execute using input      | `find . -name '*.log' \| xargs rm` |
